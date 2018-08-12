@@ -1,0 +1,14 @@
+<% provide(:title, "Log In") %>
+
+<h1>Sign In</h1>
+<%= form_for(signup_path) do |f| %>
+	<%= f.label :username %>
+	<%= f.text_field :username, class: "form-control" %><br>
+
+	<%= f.label :password %>
+	<%= f.password_field :password, class: "form-control" %><br>
+
+	<%= f.check_box :remember_me, class: "form-check-input" %> Remember Me<br>
+
+	<%= f.submit "Log In" %>
+<% end %>
