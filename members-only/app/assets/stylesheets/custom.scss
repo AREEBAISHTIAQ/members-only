@@ -11,6 +11,13 @@
     --text-color-2 : #333;
 }
 
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+
 body {
     padding-top: 60px;
     background-color: var(--bg-color-1);
@@ -63,12 +70,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .signup-link {
-      resize: vertical;
-      text-align: center;
-      margin-left: 46%;
-      font-weight: bold;
-      background-color: var(--brand-color-1);
-  }
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--brand-color-1);
+    margin-right: 60%;
+    margin-left: 45%;
+}
   .signup-link:hover {
       background-color: rgb(250, 104, 78);
   }
@@ -79,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
     float: left;
     margin-right: 10px;
     font-size: 1.7em;
-    color: var(--text-color-2);
+    color: var(--text-color-1);
     text-transform: uppercase;
     letter-spacing: -1px;
     padding-top: 9px;
@@ -87,15 +94,58 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   #logo:hover {
-    color: var(--text-color-1);
+    color: var(--text-color-2);
     text-decoration: none;
   }
 
   .navbar {
-      color: var(--text-color-1);
+      color: var(--text-color-2);
       background-color: var(--brand-color-1);
   }
 
   .navbar-inverse .navbar-nav > li > a {
-      color: var(--text-color-2);
+    color: var(--text-color-1);
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: var(--text-color-2);
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+.btn-primary {
+  background-color: var(--brand-color-1)
+}
+.btn-primary:hover {
+  background-color: rgb(250, 104, 78);
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
   }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.alert {
+  width: 100%;
+}
