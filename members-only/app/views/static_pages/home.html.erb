@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Home | WRITEAPOST</title>
-  </head>
-  <body>
+  <% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="post_form">
+        <%= render 'shared/post_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+    <h3>Post Feed</h3>
+    <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+<div class="center jumbotron">
     <h1>Welcome to WRITEAPOST!</h1>
     <p>
      You can write here as many posts as you like and the biggest advantage
      of WRITEAPOST is all the Users are fake.
      <%= link_to "Sign Up!", signup_path, class: "signup-link btn-lg btn btn-primary" %>
     </p>
-  </body>
-</html>
+    <% end %>
