@@ -1,21 +1,20 @@
-<li class= "show">
+<div class= "contain">
 <h2>All Posts</h2>
-  <span class="container-fuild">
-  <% @posts.each do |post| %>
-  <% if logged_in? %>
-  <strong>Author:</strong><%= post.user.name %><br>
+    <span class="user">
+    <% @posts.each do |post| %>
+    <span class="content"><%= post.content %></span><br>
+     <% if logged_in? %>
+    <strong>Author:</strong><%= post.user.name %><br>
   <% else %>
-  <strong>Login to see Author of this post</strong>
+    <strong>Login to see Author of this post</strong>
   <% end %>
-  </span><br>
-  <span class="title"><%= post.title %></span><br>
-  <span class="content"><%= post.content %></span><br>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
-    <% if current_user %>
+   <% if current_user %>
       <%= link_to "delete", post, method: :delete,
                                        data: { confirm: "You sure?" } %>
     <% end %>
     <% end %>
   </span>
-  </li>
+  </span>
+  </div>

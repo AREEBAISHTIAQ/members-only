@@ -233,13 +233,28 @@ span.picture {
   }
 }
 
-.Author {
-  text-align: center;
-}
 
-.show {
-  padding: 10px 0;
-  border-top: 1px solid #e8e8e8;
+.contain {
   list-style: none;
+  padding: 0;
+  div {
+    padding: 10px 0;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+    display: block;
+  }
+  .content {
+    border-bottom: 1px solid #e8e8e8;
+    display: block;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+.timestamp {
+  color: $gray-light;
+  display: block;
+  margin-left: 0px;
 }
-
+}
