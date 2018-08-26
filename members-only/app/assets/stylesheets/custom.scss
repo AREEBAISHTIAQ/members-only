@@ -140,7 +140,7 @@ input {
 .field_with_errors {
   @extend .has-error;
   .form-control {
-    color: $state-danger-text;
+    color: red;
   }
 }
 
@@ -170,7 +170,7 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid gray;
   }
 }
 
@@ -206,7 +206,7 @@ input {
     }
   }
   .timestamp {
-    color: $gray-light;
+    color: gray;
     display: block;
     margin-left: 60px;
   }
@@ -251,7 +251,7 @@ span.picture {
     margin-top: 10px;
   }
 .timestamp {
-  color: $gray-light;
+  color: gray;
   display: block;
   margin-left: 0px;
 }
