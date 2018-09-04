@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      UserMailer.with(user: @user).thankyou_email.deliver_now
       flash[:success] = "Welcome to WRITEAPOST!"
       redirect_to @user
     else
